@@ -30,8 +30,7 @@ public class EnamelCommands {
 			}
 		}
 		if (usedPoints < pinPoints) {
-			var heldItem = player.getItemInHand(InteractionHand.MAIN_HAND);
-			var item = heldItem.copyWithCount(1);
+			var item = player.getItemInHand(InteractionHand.MAIN_HAND);
 			if (item.has(EnamelComponents.PIN_COMPONENT)) {
 				if (slot==-1) {
 					pinArray.add(item);
@@ -39,7 +38,7 @@ public class EnamelCommands {
 					pinArray.add(slot,item);
 				}
 				player.setAttached(EnamelAttachments.PIN_ATTACHMENT,pinArray);
-				heldItem.setCount(heldItem.getCount()-1);
+				player.setItemInHand(InteractionHand.MAIN_HAND,ItemStack.EMPTY);
 				return 1;
 			} else {
 				source.sendFailure(Component.literal("Not a pin!"));
