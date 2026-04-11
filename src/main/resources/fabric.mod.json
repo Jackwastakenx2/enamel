@@ -20,6 +20,7 @@
 	"mixins": [
 		"${modId}.mixins.json"
 	],
+	"accessWidener": "enamel.classtweaker",
 	"depends": {
 		"minecraft": ">=${minecraftVersion}",
 		"fabricloader": ">=${fabricLoaderVersion}",

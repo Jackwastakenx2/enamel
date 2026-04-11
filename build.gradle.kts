@@ -20,7 +20,9 @@ java {
 	withSourcesJar()
 	toolchain.languageVersion = JavaLanguageVersion.of(25)
 }
-
+loom {
+	accessWidenerPath = file("src/main/resources/enamel.classtweaker")
+}
 tasks.processResources {
 	val user: String by project
 	val authors: String by project
