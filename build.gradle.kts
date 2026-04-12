@@ -8,20 +8,33 @@ val modVersion: String by project
 val branchName: String by project
 val slug: String by project
 val compatibleVersions: String by project
+val trinkets_version = "4.0.0-alpha.5+$compatibleVersions"
 
 version = "$modVersion+$branchName"
 
 dependencies {
 	minecraft(libs.minecraft)
 	api(libs.bundles.fabric)
-}
+	implementation("eu.pb4:trinkets:${trinkets_version}")
 
+}
+repositories {
+	maven {
+		name = "Nucleoid"
+		url = uri("https://maven.nucleoid.xyz/releases")
+	}
+}
 java {
 	withSourcesJar()
 	toolchain.languageVersion = JavaLanguageVersion.of(25)
 }
 loom {
 	accessWidenerPath = file("src/main/resources/enamel.classtweaker")
+}
+fabricApi {
+	configureDataGeneration() {
+		 client = true
+	}
 }
 tasks.processResources {
 	val user: String by project

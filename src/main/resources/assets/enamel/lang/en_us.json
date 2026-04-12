@@ -1,6 +1,5 @@
 {
-	"item.enamel.modifiers.pin": "For %s Pin Points:",
-	"item.enamel.modifiers.pin.single": "For %s Pin Point:",
+	"trinkets.slot.offhand.pin": "Pin",
 	"enamel.pin_points": "Pin Points"
 
 }

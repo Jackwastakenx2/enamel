@@ -1,11 +1,14 @@
 package io.github.Jackwastakenx2.enamel;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
+import net.minecraft.world.entity.player.Player;
 
 public class EnamelAttributes {
 	private static Holder<Attribute> register(
@@ -30,5 +33,9 @@ public class EnamelAttributes {
 	);
 	public static void initialize() {
 		Enamel.LOGGER.info("Registering {} attributes", Enamel.MOD_ID);
+		FabricDefaultAttributeRegistry.register(EntityType.PLAYER,
+			Player.createAttributes()
+				.add(PIN_POINTS,2)
+				.build());
 	}
 }
