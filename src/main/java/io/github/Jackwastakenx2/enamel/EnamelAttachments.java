@@ -1,6 +1,5 @@
 package io.github.Jackwastakenx2.enamel;
 
-import com.mojang.serialization.Codec;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentSyncPredicate;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
@@ -12,7 +11,6 @@ public class EnamelAttachments {
 		Identifier.fromNamespaceAndPath(Enamel.MOD_ID,"pin_point_attachment"),
 		integerBuilder -> integerBuilder
 			.initializer(() -> 0)
-			.persistent(Codec.INT)
 			.syncWith(
 				ByteBufCodecs.INT,
 				AttachmentSyncPredicate.targetOnly()
