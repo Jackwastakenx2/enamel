@@ -12,7 +12,11 @@ import net.minecraft.world.entity.player.Player;
 
 public class EnamelAttributes {
 	private static Holder<Attribute> register(
-		String name, double defaultValue, double minValue, double maxValue, boolean syncedWithClient
+		String name,
+		double defaultValue,
+		double minValue,
+		double maxValue,
+		boolean syncedWithClient
 	) {
 		Identifier identifier = Identifier.fromNamespaceAndPath(Enamel.MOD_ID, name);
 		Attribute entityAttribute = new RangedAttribute(
@@ -26,8 +30,8 @@ public class EnamelAttributes {
 	}
 	public static Holder<Attribute> PIN_POINTS = register(
 		"pin_points",
-		2,
-		2,
+		4,
+		4,
 		16,
 		true
 	);
@@ -35,7 +39,7 @@ public class EnamelAttributes {
 		Enamel.LOGGER.info("Registering {} attributes", Enamel.MOD_ID);
 		FabricDefaultAttributeRegistry.register(EntityType.PLAYER,
 			Player.createAttributes()
-				.add(PIN_POINTS,2)
+				.add(PIN_POINTS,4)
 				.build());
 	}
 }

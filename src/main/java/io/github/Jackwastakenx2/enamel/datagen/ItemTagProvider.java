@@ -8,15 +8,32 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import org.jspecify.annotations.Nullable;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
+import static io.github.Jackwastakenx2.enamel.EnamelItems.*;
+
 public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
-	public ItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture, @Nullable BlockTagsProvider blockTagsProvider) {super(output, registryLookupFuture, blockTagsProvider);}
 	public static final TagKey<Item> PIN_ITEMS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(TrinketsMain.MOD_ID, "offhand/pin"));
-	@Override
-	protected void addTags(HolderLookup.Provider provider) {
+	public ItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+		super(output, registryLookupFuture);
 		LOGGER.info(PIN_ITEMS.toString());
+	}
+
+	@Override
+	protected void addTags(HolderLookup.@NonNull Provider provider) {
+		valueLookupBuilder(PIN_ITEMS)
+			.add(PLUSH_PIN)
+			.add(COPPER_PIN)
+			.add(IRON_PIN)
+			.add(DIAMOND_PIN)
+			.add(NETHERITE_PIN)
+			.add(ERROR_PIN)
+			.add(HEALTH_PIN)
+			.add(LONGNAIL)
+			.add(SPEED_PIN)
+			.add(ROCK_PIN)
+			.setReplace(false);
 	}
 }

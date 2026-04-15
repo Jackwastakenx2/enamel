@@ -31,7 +31,7 @@ java {
 
 fabricApi {
 	configureDataGeneration() {
-		client = true
+		client=true
 	}
 }
 tasks.processResources {

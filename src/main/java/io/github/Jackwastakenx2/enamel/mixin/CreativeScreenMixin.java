@@ -25,8 +25,8 @@ public abstract class CreativeScreenMixin extends AbstractContainerScreen<Creati
 	}
 	@Inject(method = "extractRenderState",at=@At(value="TAIL"))
 	public void renderPinPips(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a, CallbackInfo ci) {
-		if (this.selectedTab.getType() == CreativeModeTab.Type.INVENTORY) {
-			PinPips.render(graphics, this.leftPos + this.imageWidth, this.topPos, this.minecraft.player);
+		if (selectedTab.getType() == CreativeModeTab.Type.INVENTORY) {
+			PinPips.render(graphics, this.leftPos + this.imageWidth + 8, this.topPos, this.minecraft.player);
 		}
 	}
 }

@@ -2,6 +2,7 @@ package io.github.Jackwastakenx2.enamel;
 
 import eu.pb4.trinkets.api.SlotAttributes;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
+import eu.pb4.trinkets.api.TrinketsApi;
 import eu.pb4.trinkets.api.callback.TrinketCallback;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.core.Holder;
@@ -54,6 +55,16 @@ public class PinItem extends Item implements TrinketCallback {
 			return TrinketCallback.super.canEquip(stack, slot, entity);
 		}
 		return false;
+	}
+
+	@Override
+	public boolean canUnequip(ItemStack stack, TrinketSlotAccess slot, LivingEntity entity) {
+		int cSize = slot.inventory().getContainerSize();
+		if (slot.index() == cSize-2) {
+			return TrinketCallback.super.canUnequip(stack, slot, entity);
+		} else {
+			return false;
+		}
 	}
 
 	@Override

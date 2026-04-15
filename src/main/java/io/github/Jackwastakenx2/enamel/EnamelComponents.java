@@ -2,8 +2,6 @@ package io.github.Jackwastakenx2.enamel;
 
 import com.mojang.serialization.Codec;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
-import net.fabricmc.fabric.api.event.Event;
-import net.fabricmc.fabric.api.item.v1.ItemComponentTooltipProviderRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
@@ -20,9 +18,14 @@ public class EnamelComponents {
 	);
 	public static void initialize() {
 		Enamel.LOGGER.info("Registering {} components", Enamel.MOD_ID);
-		ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipFlag, list) -> {
+		ItemTooltipCallback.EVENT.register(((itemStack, _, _, list) -> {
 			if (itemStack.has(PIN_COST_COMPONENT)) {
-				var compo = Component.translatable("item.enamel.cost.info",itemStack.get(PIN_COST_COMPONENT)).withStyle(ChatFormatting.LIGHT_PURPLE);
+				int cost = itemStack.get(PIN_COST_COMPONENT);
+				String key = "item.enamel.cost.info";
+				if (cost!=1) {
+					key+=".plural";
+				}
+				var compo = Component.translatable(key,cost).withStyle(ChatFormatting.LIGHT_PURPLE);
 				list.add(1,compo);
 			}
 		}));

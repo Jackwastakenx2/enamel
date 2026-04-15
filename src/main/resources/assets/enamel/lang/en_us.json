@@ -6,11 +6,16 @@
 	"item.enamel.cost.info": "Costs %s Pin Point",
 	"item.enamel.cost.info.plural": "Costs %s Pin Points",
 
+	//items
 	"item.enamel.doll_pin": "Plushie Pin",
 	"item.enamel.copper_pin": "Copper Badge",
 	"item.enamel.iron_pin": "Iron Badge",
 	"item.enamel.diamond_pin": "Diamond Badge",
 	"item.enamel.netherite_pin": "Netherite Badge",
+	"item.enamel.speed_pin": "Speedy Pin",
+	"item.enamel.health_pin": "Hearty Pin",
+	"item.enamel.rock_pin": "Rock Pin",
+	"item.enamel.longsword_pin": "Longsword Pin",
 	//lol.
 	"item.enamel.glitch_pin": "pin.glitch"
 }

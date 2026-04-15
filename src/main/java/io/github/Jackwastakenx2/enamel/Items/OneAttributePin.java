@@ -7,19 +7,30 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.function.BiConsumer;
+import java.util.function.Function;
 
-public class PlushPin extends PinItem {
-	public PlushPin(Properties properties) {
+public class OneAttributePin extends PinItem {
+	private final Holder<Attribute> attribute;
+	private final double value;
+	private final AttributeModifier.Operation operation;
+	public OneAttributePin(Holder<Attribute> attribute, double value, AttributeModifier.Operation operation, Properties properties) {
 		super(properties);
+		this.attribute = attribute;
+		this.value = value;
+		this.operation = operation;
+	}
+
+	public static Function<Properties, OneAttributePin> SetAttribute(Holder<Attribute> attribute, double value, AttributeModifier.Operation operation) {
+		return (properties -> new OneAttributePin(attribute,value,operation,properties));
 	}
 
 	@Override
 	public void forEachTrinketModifier(ItemStack stack, TrinketSlotAccess slot, LivingEntity entity, Identifier slotIdentifier, BiConsumer<Holder<Attribute>, AttributeModifier> consumer) {
-		consumer.accept(Attributes.SCALE,new AttributeModifier(slotIdentifier.withSuffix("/enamel/plushie"),-0.75, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+		consumer.accept(attribute,new AttributeModifier(slotIdentifier.withSuffix("/enamel/generic"),this.value, operation));
+
 		super.forEachTrinketModifier(stack, slot, entity, slotIdentifier, consumer);
 	}
 }

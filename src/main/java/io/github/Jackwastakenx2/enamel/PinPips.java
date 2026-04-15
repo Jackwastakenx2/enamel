@@ -16,7 +16,6 @@ public class PinPips {
 		int h = 8;
 		int rw = 8;
 		int w = 8;
-		int m = 4;
 		float u_empty = 0;
 		float u_full = 8;
 		float u_over = 16;
@@ -30,7 +29,7 @@ public class PinPips {
 			} else {
 				u = u_over;
 			}
-			graphics.blit(RenderPipelines.GUI_TEXTURED,id,(startX-w)-m,startY+(h*i)+m,u,0,w,h,rw,rh,24,8);
+			graphics.blit(RenderPipelines.GUI_TEXTURED,id,(startX-w),startY+(h*i),u,0,w,h,rw,rh,24,8);
 		}
 	}
 }

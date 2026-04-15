@@ -10,5 +10,7 @@ public class EnamelDatagen implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(ModelProvider::new);
 		pack.addProvider(ItemTagProvider::new);
+
 	}
+
 }

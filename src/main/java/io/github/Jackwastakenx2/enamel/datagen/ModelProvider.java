@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import org.jspecify.annotations.NonNull;
 
 public class ModelProvider extends FabricModelProvider {
 	public ModelProvider(FabricPackOutput output) {
@@ -13,7 +14,7 @@ public class ModelProvider extends FabricModelProvider {
 	}
 
 	@Override
-	public void generateBlockStateModels(BlockModelGenerators blockModelGenerators) {
+	public void generateBlockStateModels(@NonNull BlockModelGenerators blockModelGenerators) {
 
 	}
 
@@ -24,5 +25,14 @@ public class ModelProvider extends FabricModelProvider {
 		itemModelGenerators.generateFlatItem(EnamelItems.IRON_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.DIAMOND_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.NETHERITE_PIN,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(EnamelItems.ERROR_PIN,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(EnamelItems.ROCK_PIN,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(EnamelItems.HEALTH_PIN,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(EnamelItems.SPEED_PIN,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(EnamelItems.LONGNAIL,ModelTemplates.FLAT_ITEM);
+
+
+
+
 	}
 }
