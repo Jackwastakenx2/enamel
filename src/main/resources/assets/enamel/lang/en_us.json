@@ -1,5 +1,16 @@
 {
 	"trinkets.slot.offhand.pin": "Pin",
-	"enamel.pin_points": "Pin Points"
+	"enamel.pin_points": "Pin Points",
+	"creativeTab.enamel": "Enamel",
 
+	"item.enamel.cost.info": "Costs %s Pin Point",
+	"item.enamel.cost.info.plural": "Costs %s Pin Points",
+
+	"item.enamel.doll_pin": "Plushie Pin",
+	"item.enamel.copper_pin": "Copper Badge",
+	"item.enamel.iron_pin": "Iron Badge",
+	"item.enamel.diamond_pin": "Diamond Badge",
+	"item.enamel.netherite_pin": "Netherite Badge",
+	//lol.
+	"item.enamel.glitch_pin": "pin.glitch"
 }

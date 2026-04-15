@@ -18,14 +18,16 @@
 	"license": "${license}",
 	"icon": "assets/${modId}/icon.png",
 	"mixins": [
-		"${modId}.mixins.json"
+		{
+			"config": "enamel.mixins.json",
+			"environment": "client"
+		}
 	],
-	"accessWidener": "enamel.classtweaker",
 	"depends": {
 		"minecraft": ">=${minecraftVersion}",
 		"fabricloader": ">=${fabricLoaderVersion}",
 		"fabric-api": ">=${fabricApiVersion}",
-		"trinkets":">=4.0.0-alpha.5+26.1"
+		"trinkets":">=4.0.0-alpha.6+26.1"
 	},
 	"suggests": {
 	},
@@ -34,6 +36,10 @@
           "io.github.Jackwastakenx2.enamel.Enamel"
 		],
 		"client": [
+
+		],
+		"fabric-datagen": [
+			"io.github.Jackwastakenx2.enamel.datagen.EnamelDatagen"
 		]
 	}
 }

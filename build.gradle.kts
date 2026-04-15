@@ -8,7 +8,7 @@ val modVersion: String by project
 val branchName: String by project
 val slug: String by project
 val compatibleVersions: String by project
-val trinkets_version = "4.0.0-alpha.5+$compatibleVersions"
+val trinkets_version = "4.0.0-alpha.6+$compatibleVersions"
 
 version = "$modVersion+$branchName"
 
@@ -28,12 +28,10 @@ java {
 	withSourcesJar()
 	toolchain.languageVersion = JavaLanguageVersion.of(25)
 }
-loom {
-	accessWidenerPath = file("src/main/resources/enamel.classtweaker")
-}
+
 fabricApi {
 	configureDataGeneration() {
-		 client = true
+		client = true
 	}
 }
 tasks.processResources {

@@ -3,7 +3,9 @@ package io.github.Jackwastakenx2.enamel;
 import eu.pb4.trinkets.api.SlotAttributes;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
 import eu.pb4.trinkets.api.callback.TrinketCallback;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -11,15 +13,16 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 
+import java.util.List;
 import java.util.function.BiConsumer;
 
 public class PinItem extends Item implements TrinketCallback {
-	private final Holder<Attribute> pinSlotModifier;
+	private final Holder<Attribute> pinSlotModifier = SlotAttributes.createAttributeForSlot("offhand/pin");
 	public PinItem(Properties properties) {
 		properties.stacksTo(1);
 		super(properties);
-		this.pinSlotModifier = SlotAttributes.createAttributeForSlot("offhand/pin");
 
 	}
 
