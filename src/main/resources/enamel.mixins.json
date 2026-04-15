@@ -4,6 +4,7 @@
 	"package": "io.github.Jackwastakenx2.enamel.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
+
 	],
 	"server": [
 	],
@@ -11,6 +12,7 @@
 		"defaultRequire": 1
 	},
 	"client": [
+		"CreativeScreenMixin",
 		"InventoryScreenMixin"
 	]
 }

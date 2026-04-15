@@ -1,4 +1,4 @@
-<!--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
+--suppress HtmlDeprecatedTag, XmlDeprecatedElement -->
 
 <center>
  Hollow Knight/Paper Mario style Charm system, It's pin themed! 
