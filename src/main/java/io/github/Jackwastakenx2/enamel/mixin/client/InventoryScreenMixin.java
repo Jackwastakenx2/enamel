@@ -21,6 +21,6 @@ public abstract class InventoryScreenMixin extends AbstractRecipeBookScreen<Inve
 
 	@Inject(method = "extractRenderState(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIF)V",at=@At(value = "TAIL"))
 	public void renderPinPips(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a, CallbackInfo ci) {
-		PinPips.render(graphics,this.leftPos + this.imageWidth + 8,this.topPos,this.minecraft.player);
+		PinPips.render(graphics,this.leftPos + this.imageWidth + 16,this.topPos,this.minecraft.player);
 	}
 }

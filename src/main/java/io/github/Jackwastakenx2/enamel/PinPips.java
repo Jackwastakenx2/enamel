@@ -12,14 +12,14 @@ public class PinPips {
 		if (player.getAttribute(EnamelAttributes.PIN_POINTS) != null) {
 			max = (int) player.getAttributeValue(EnamelAttributes.PIN_POINTS);
 		}
-		int rh = 8;
-		int h = 8;
-		int rw = 8;
-		int w = 8;
+		int rh = 16;
+		int h = 16;
+		int rw = 16;
+		int w = 16;
 		float u_empty = 0;
-		float u_full = 8;
-		float u_over = 16;
-		Identifier id = Identifier.fromNamespaceAndPath(Enamel.MOD_ID,"textures/gui/pp_ind.png");
+		float u_full = rw;
+		float u_over = 2*rw;
+		Identifier id = Identifier.fromNamespaceAndPath(Enamel.MOD_ID,"textures/gui/pinpoint_indicator.png");
 		for (int i=0;i<Math.max(used,max);i++) {
 			float u;
 			if (i>=used) {
@@ -29,7 +29,7 @@ public class PinPips {
 			} else {
 				u = u_over;
 			}
-			graphics.blit(RenderPipelines.GUI_TEXTURED,id,(startX-w),startY+(h*i),u,0,w,h,rw,rh,24,8);
+			graphics.blit(RenderPipelines.GUI_TEXTURED,id,(startX-w),startY+(h*i),u,0,w,h,rw,rh,rw*3,rh);
 		}
 	}
 }
