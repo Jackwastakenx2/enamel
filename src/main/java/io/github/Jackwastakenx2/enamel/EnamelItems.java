@@ -36,7 +36,7 @@ public class EnamelItems {
 	);
 //	public static PinItem TEST_PIN = register("test_pin", PinItem::new, new Item.Properties()
 //		.component(EnamelComponents.PIN_COST_COMPONENT,1));
-	public static final PinItem PLUSH_PIN = register("doll_pin", OneAttributePin.SetAttribute(Attributes.SCALE,-0.75, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),new Item.Properties()
+	public static final PinItem PLUSH_PIN = register("doll_pin", OneAttributePin.SetAttribute(Attributes.SCALE,-0.7, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),new Item.Properties()
 		.component(EnamelComponents.PIN_COST_COMPONENT,1)
 	);
 	public static final PinItem HEALTH_PIN = register("health_pin", OneAttributePin.SetAttribute(Attributes.MAX_HEALTH,4, AttributeModifier.Operation.ADD_VALUE),new Item.Properties()
@@ -57,6 +57,9 @@ public class EnamelItems {
 	public static final PinItem IRON_PIN = register("iron_pin", BadgePin.setArmor(2),new Item.Properties()
 		.component(EnamelComponents.PIN_COST_COMPONENT,2)
 	);
+	public static final PinItem GOLD_PIN = register("gold_pin", BadgePin.setArmor(1),new Item.Properties()
+		.component(EnamelComponents.PIN_COST_COMPONENT,1)
+	);
 	public static final PinItem DIAMOND_PIN = register("diamond_pin", BadgePin.setArmor(3,2),new Item.Properties()
 		.component(EnamelComponents.PIN_COST_COMPONENT,3)
 	);
@@ -64,17 +67,23 @@ public class EnamelItems {
 		.component(EnamelComponents.PIN_COST_COMPONENT,4)
 	);
 	public static final PinItem ERROR_PIN = register("glitch_pin", GlitchPin::new,new Item.Properties()
-		.component(EnamelComponents.PIN_COST_COMPONENT,-4));
+		.component(EnamelComponents.PIN_COST_COMPONENT,-4)
+	);
+	public static final PinItem FURNACE_PIN = register("furnace_pin",PinItem::new,new Item.Properties()
+		.component(EnamelComponents.PIN_COST_COMPONENT,2)
+	);
 	public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
 		.icon(() -> new ItemStack(PLUSH_PIN))
 		.title(Component.translatable("creativeTab.enamel"))
 		.displayItems((_, output) -> {
 			output.accept(COPPER_PIN);
 			output.accept(IRON_PIN);
+			output.accept(GOLD_PIN);
 			output.accept(DIAMOND_PIN);
 			output.accept(NETHERITE_PIN);
 			output.accept(HEALTH_PIN);
 			output.accept(SPEED_PIN);
+			output.accept(FURNACE_PIN);
 			output.accept(ROCK_PIN);
 			output.accept(LONGNAIL);
 			output.accept(PLUSH_PIN);

@@ -5,10 +5,12 @@
     "enamel:iron_pin",
     "enamel:diamond_pin",
     "enamel:netherite_pin",
+    "enamel:gold_pin",
     "enamel:glitch_pin",
     "enamel:health_pin",
     "enamel:longsword_pin",
     "enamel:speed_pin",
-    "enamel:rock_pin"
+    "enamel:rock_pin",
+    "enamel:furnace_pin"
   ]
 }

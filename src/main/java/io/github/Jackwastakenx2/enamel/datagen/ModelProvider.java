@@ -23,6 +23,7 @@ public class ModelProvider extends FabricModelProvider {
 		itemModelGenerators.generateFlatItem(EnamelItems.PLUSH_PIN, ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.COPPER_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.IRON_PIN,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(EnamelItems.GOLD_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.DIAMOND_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.NETHERITE_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.ERROR_PIN,ModelTemplates.FLAT_ITEM);
@@ -30,6 +31,7 @@ public class ModelProvider extends FabricModelProvider {
 		itemModelGenerators.generateFlatItem(EnamelItems.HEALTH_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.SPEED_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(EnamelItems.LONGNAIL,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(EnamelItems.FURNACE_PIN,ModelTemplates.FLAT_ITEM);
 
 
 

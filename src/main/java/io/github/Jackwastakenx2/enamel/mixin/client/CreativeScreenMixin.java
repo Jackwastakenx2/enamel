@@ -1,4 +1,4 @@
-package io.github.Jackwastakenx2.enamel.mixin;
+package io.github.Jackwastakenx2.enamel.mixin.client;
 
 
 import io.github.Jackwastakenx2.enamel.PinPips;
@@ -25,7 +25,7 @@ public abstract class CreativeScreenMixin extends AbstractContainerScreen<Creati
 	}
 	@Inject(method = "extractRenderState",at=@At(value="TAIL"))
 	public void renderPinPips(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a, CallbackInfo ci) {
-		if (selectedTab.getType() == CreativeModeTab.Type.INVENTORY) {
+		if (this.selectedTab.getType() == CreativeModeTab.Type.INVENTORY) {
 			PinPips.render(graphics, this.leftPos + this.imageWidth + 8, this.topPos, this.minecraft.player);
 		}
 	}

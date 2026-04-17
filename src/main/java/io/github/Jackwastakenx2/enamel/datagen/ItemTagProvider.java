@@ -29,11 +29,13 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 			.add(IRON_PIN)
 			.add(DIAMOND_PIN)
 			.add(NETHERITE_PIN)
+			.add(GOLD_PIN)
 			.add(ERROR_PIN)
 			.add(HEALTH_PIN)
 			.add(LONGNAIL)
 			.add(SPEED_PIN)
 			.add(ROCK_PIN)
+			.add(FURNACE_PIN)
 			.setReplace(false);
 	}
 }
