@@ -19,7 +19,7 @@ public class PinPips {
 		float u_empty = 0;
 		float u_full = rw;
 		float u_over = 2*rw;
-		Identifier id = Identifier.fromNamespaceAndPath(Enamel.MOD_ID,"textures/gui/pinpoint_indicator.png");
+		Identifier id = Identifier.fromNamespaceAndPath(Enamel.MOD_ID,"textures/gui/sprites/container/pinpoint_icons.png");
 		for (int i=0;i<Math.max(used,max);i++) {
 			float u;
 			if (i>=used) {
