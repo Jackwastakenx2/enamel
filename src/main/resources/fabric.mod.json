@@ -36,7 +36,7 @@
           "io.github.Jackwastakenx2.enamel.Enamel"
 		],
 		"client": [
-
+			"io.github.Jackwastakenx2.enamel.EnamelClient"
 		],
 		"fabric-datagen": [
 			"io.github.Jackwastakenx2.enamel.datagen.EnamelDatagen"
