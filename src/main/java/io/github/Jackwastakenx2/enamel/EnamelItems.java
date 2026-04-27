@@ -28,14 +28,11 @@ public class EnamelItems {
 
 		// Register the item.
 		Registry.register(BuiltInRegistries.ITEM, itemKey, item);
-
 		return item;
 	}
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
 		BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(Enamel.MOD_ID, "creative_tab")
 	);
-//	public static PinItem TEST_PIN = register("test_pin", PinItem::new, new Item.Properties()
-//		.component(EnamelComponents.PIN_COST_COMPONENT,1));
 	public static final PinItem PLUSH_PIN = register("doll_pin", OneAttributePin.SetAttribute(Attributes.SCALE,-0.7, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),new Item.Properties()
 		.component(EnamelComponents.PIN_COST_COMPONENT,1)
 	);
@@ -49,6 +46,9 @@ public class EnamelItems {
 		.component(EnamelComponents.PIN_COST_COMPONENT,1)
 	);
 	public static final PinItem LONGNAIL = register("longsword_pin", OneAttributePin.SetAttribute(Attributes.ENTITY_INTERACTION_RANGE,0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),new Item.Properties()
+		.component(EnamelComponents.PIN_COST_COMPONENT,1)
+	);
+	public static final PinItem FEST_PIN = register("modfest_pin",PinItem::new,new Item.Properties()
 		.component(EnamelComponents.PIN_COST_COMPONENT,1)
 	);
 	public static final PinItem COPPER_PIN = register("copper_pin", BadgePin.setArmor(1),new Item.Properties()
@@ -88,6 +88,7 @@ public class EnamelItems {
 			output.accept(LONGNAIL);
 			output.accept(PLUSH_PIN);
 			output.accept(ERROR_PIN);
+			output.accept(FEST_PIN);
 		})
 		.build();
 	public static void initialize() {

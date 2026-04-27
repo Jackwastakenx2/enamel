@@ -36,6 +36,7 @@ public abstract class PlayerMixin extends Avatar implements ContainerUser {
 		}
 		return damage;
 	}
+//	as far as i could tell, this failed to work... sadge...
 //	@ModifyVariable(method = "causeFoodExhaustion", at = @At(value = "HEAD"), argsOnly = true, name = "amount")
 //	public float PincumberHunger(float amount) {
 //		var player = (Player)(Object) this;
@@ -57,7 +58,7 @@ public abstract class PlayerMixin extends Avatar implements ContainerUser {
 		if (speed != null) {
 			if (attr != null && used > attr.getValue()) {
 				if (!speed.hasModifier(SPEED_MODIFIER_PINCUMBER)) {
-					speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_PINCUMBER, -(1-(1/1.5F)), AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
+					speed.addTransientModifier(new AttributeModifier(SPEED_MODIFIER_PINCUMBER, (double) -1 /3, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 				}
 			} else if (speed.hasModifier(SPEED_MODIFIER_PINCUMBER)) {
 				speed.removeModifier(SPEED_MODIFIER_PINCUMBER);

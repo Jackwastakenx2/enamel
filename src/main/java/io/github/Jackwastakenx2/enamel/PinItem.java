@@ -3,8 +3,11 @@ package io.github.Jackwastakenx2.enamel;
 import eu.pb4.trinkets.api.SlotAttributes;
 import eu.pb4.trinkets.api.TrinketSlotAccess;
 import eu.pb4.trinkets.api.callback.TrinketCallback;
+import eu.pb4.trinkets.api.component.TrinketDataComponents;
+import eu.pb4.trinkets.api.component.TrinketEquippable;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
@@ -15,9 +18,12 @@ import net.minecraft.world.item.ItemStack;
 import java.util.function.BiConsumer;
 
 public class PinItem extends Item implements TrinketCallback {
-	private final Holder<Attribute> pinSlotModifier = SlotAttributes.createAttributeForSlot("offhand/pin");
+	private final Holder<Attribute> pinSlotModifier = SlotAttributes.createAttributeForSlot("chest/pin");
 	public PinItem(Properties properties) {
 		properties.stacksTo(1);
+		properties.component(TrinketDataComponents.EQUIPMENT,TrinketEquippable.DEFAULT
+			.withSlots("chest/pin")
+			.withEquipSound(SoundEvents.ARMOR_EQUIP_GENERIC));
 		super(properties);
 
 	}
@@ -26,7 +32,7 @@ public class PinItem extends Item implements TrinketCallback {
 	public void onEquip(ItemStack stack, TrinketSlotAccess slot, LivingEntity entity) {
 		TrinketCallback.super.onEquip(stack, slot, entity);
 		if (stack.has(EnamelComponents.PIN_COST_COMPONENT)) {
-			int cost = stack.get(EnamelComponents.PIN_COST_COMPONENT);
+			int cost = stack.getOrDefault(EnamelComponents.PIN_COST_COMPONENT,0);
 			int used = entity.getAttachedOrCreate(EnamelAttachments.PP_ATTACHMENT);
 			entity.setAttached(EnamelAttachments.PP_ATTACHMENT,cost+used);
 		}
@@ -36,7 +42,7 @@ public class PinItem extends Item implements TrinketCallback {
 	public void onUnequip(ItemStack stack, TrinketSlotAccess slot, LivingEntity entity) {
 		TrinketCallback.super.onUnequip(stack, slot, entity);
 		if (stack.has(EnamelComponents.PIN_COST_COMPONENT)) {
-			int cost = stack.get(EnamelComponents.PIN_COST_COMPONENT);
+			int cost = stack.getOrDefault(EnamelComponents.PIN_COST_COMPONENT,0);
 			int used = entity.getAttachedOrCreate(EnamelAttachments.PP_ATTACHMENT);
 			entity.setAttached(EnamelAttachments.PP_ATTACHMENT, used - cost);
 		}

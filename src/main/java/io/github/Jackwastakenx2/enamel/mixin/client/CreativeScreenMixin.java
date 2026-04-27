@@ -17,16 +17,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(CreativeModeInventoryScreen.class)
 public abstract class CreativeScreenMixin extends AbstractContainerScreen<CreativeModeInventoryScreen.ItemPickerMenu> implements FabricCreativeModeInventoryScreen {
-	@Shadow
-	private static CreativeModeTab selectedTab;
-
 	public CreativeScreenMixin(CreativeModeInventoryScreen.ItemPickerMenu menu, Inventory inventory, Component title) {
 		super(menu, inventory, title);
 	}
 	@Inject(method = "extractRenderState",at=@At(value="TAIL"))
 	public void renderPinPips(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a, CallbackInfo ci) {
-		if (this.selectedTab.getType() == CreativeModeTab.Type.INVENTORY) {
-			PinPips.render(graphics, this.leftPos + this.imageWidth + 16, this.topPos, this.minecraft.player);
+		if (this.minecraft.player != null) {
+			PinPips.render(graphics, this.leftPos, this.topPos + this.imageHeight + 24, this.minecraft.player);
 		}
 	}
 }

@@ -23,4 +23,9 @@ public class GlitchPin extends PinItem {
 		consumer.accept(Attributes.MAX_HEALTH,new AttributeModifier(id,-1, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 		super.forEachTrinketModifier(stack, slot, entity, slotIdentifier, consumer);
 	}
+
+	@Override
+	public void onUnequip(ItemStack stack, TrinketSlotAccess slot, LivingEntity entity) {
+		super.onUnequip(stack, slot, entity);
+	}
 }

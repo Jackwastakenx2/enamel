@@ -1,5 +1,5 @@
 {
-	"trinkets.slot.offhand.pin": "Pin",
+	"trinkets.slot.chest.pin": "Pin",
 	"enamel.pin_points": "Pin Points",
 	"creativeTab.enamel": "Enamel",
 
@@ -18,6 +18,7 @@
 	"item.enamel.rock_pin": "Rock Pin",
 	"item.enamel.longsword_pin": "Longsword Pin",
 	"item.enamel.furnace_pin": "Furnace Pin",
+	"item.enamel.modfest_pin": "Modfest '26 Pin",
 	//lol.
 	"item.enamel.glitch_pin": "pin.glitch"
 }
