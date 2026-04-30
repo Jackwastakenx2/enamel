@@ -8,7 +8,8 @@ public class EnamelDatagen implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-		pack.addProvider(ModelProvider::new);
+		pack.addProvider(EnamelModelProvider::new);
+		pack.addProvider(EnamelRecipeProvider::new);
 	}
 
 }

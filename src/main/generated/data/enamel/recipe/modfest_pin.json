@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": "enamel:pin_base",
+    "r": "minecraft:resin_brick",
+    "x": "minecraft:magenta_wool",
+    "y": "minecraft:pink_petals"
+  },
+  "pattern": [
+    "xyx",
+    "rbr"
+  ],
+  "result": {
+    "id": "enamel:modfest_pin"
+  }
+}

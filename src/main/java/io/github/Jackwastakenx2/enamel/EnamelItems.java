@@ -72,6 +72,7 @@ public class EnamelItems {
 	public static final PinItem FURNACE_PIN = register("furnace_pin",PinItem::new,new Item.Properties()
 		.component(EnamelComponents.PIN_COST_COMPONENT,2)
 	);
+	public static final Item PIN_BASE = register("pin_base",Item::new,new Item.Properties());
 	public static final CreativeModeTab CUSTOM_CREATIVE_TAB = FabricCreativeModeTab.builder()
 		.icon(() -> new ItemStack(PLUSH_PIN))
 		.title(Component.translatable("creativeTab.enamel"))
@@ -89,6 +90,7 @@ public class EnamelItems {
 			output.accept(PLUSH_PIN);
 			output.accept(ERROR_PIN);
 			output.accept(FEST_PIN);
+			output.accept(PIN_BASE);
 		})
 		.build();
 	public static void initialize() {

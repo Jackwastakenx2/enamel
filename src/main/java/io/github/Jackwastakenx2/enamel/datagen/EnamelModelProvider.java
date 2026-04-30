@@ -9,8 +9,8 @@ import org.jspecify.annotations.NonNull;
 
 import static io.github.Jackwastakenx2.enamel.EnamelItems.*;
 
-public class ModelProvider extends FabricModelProvider {
-	public ModelProvider(FabricPackOutput output) {
+public class EnamelModelProvider extends FabricModelProvider {
+	public EnamelModelProvider(FabricPackOutput output) {
 		super(output);
 	}
 
@@ -34,6 +34,7 @@ public class ModelProvider extends FabricModelProvider {
 		itemModelGenerators.generateFlatItem(LONGNAIL,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(FURNACE_PIN,ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(FEST_PIN,ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(PIN_BASE,ModelTemplates.FLAT_ITEM);
 
 
 

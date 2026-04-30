@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": "enamel:pin_base",
+    "r": "minecraft:resin_brick",
+    "x": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    "xxx",
+    "rbr"
+  ],
+  "result": {
+    "id": "enamel:copper_pin"
+  }
+}

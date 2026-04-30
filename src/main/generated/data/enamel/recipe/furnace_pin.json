@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "b": "enamel:pin_base",
+    "r": "minecraft:resin_brick",
+    "x": "minecraft:comparator",
+    "y": "minecraft:furnace"
+  },
+  "pattern": [
+    "xyx",
+    "rbr"
+  ],
+  "result": {
+    "id": "enamel:furnace_pin"
+  }
+}
