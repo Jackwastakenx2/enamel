@@ -37,7 +37,7 @@ public class BlockMixin {
 		List<ItemStack> drops = new ArrayList<>();
 		List<ItemStack> originalDrops = cir.getReturnValue();
 
-		if (!TrinketsApi.getAttachment((LivingEntity) breaker).isEquipped(EnamelItems.FURNACE_PIN)) {
+		if (breaker == null || !TrinketsApi.getAttachment((LivingEntity) breaker).isEquipped(EnamelItems.FURNACE_PIN)) {
 			cir.setReturnValue(originalDrops);
 			return;
 		}
