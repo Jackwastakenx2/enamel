@@ -8,18 +8,32 @@
 
 	//items
 	"item.enamel.doll_pin": "Plushie Pin",
+	"lore.enamel.doll_pin": "A cute pin, makes you small.",
 	"item.enamel.copper_pin": "Copper Badge",
+	"lore.enamel.copper_pin": "This badge can be equipped to protect you from damage.",
 	"item.enamel.iron_pin": "Iron Badge",
+	"lore.enamel.iron_pin": "This badge can be equipped to protect you from damage.",
 	"item.enamel.gold_pin": "Gold Badge",
+	"lore.enamel.gold_pin": "This badge can be equipped to protect you from damage.",
 	"item.enamel.diamond_pin": "Diamond Badge",
+	"lore.enamel.diamond_pin": "This badge can be equipped to protect you from damage.",
 	"item.enamel.netherite_pin": "Netherite Badge",
+	"lore.enamel.netherite_pin": "This badge can be equipped to protect you from damage.",
 	"item.enamel.speed_pin": "Speedy Pin",
+	"lore.enamel.speed_pin": "A simple pin, makes you faster.",
 	"item.enamel.health_pin": "Hearty Pin",
+	"lore.enamel.health_pin": "A simple pin, gives you two extra hearts.",
 	"item.enamel.rock_pin": "Rock Pin",
+	"lore.enamel.rock_pin": "A boring pin, causes you to be knocked back less.",
 	"item.enamel.longsword_pin": "Longsword Pin",
+	"lore.enamel.longsword_pin": "A simple pin, causes you to be able to attack from farther away.",
 	"item.enamel.furnace_pin": "Furnace Pin",
+	"lore.enamel.furnace_pin": "A unique pin, causes broken Blocks to smelt automatically.",
 	"item.enamel.modfest_pin": "Modfest '26 Pin",
+	"lore.enamel.modfest_pin": "A cute pin, with no real function.",
 	"item.enamel.pin_base": "Pin Base",
+	"lore.enamel.pin_base": "A sharp iron object, used in the crafting of pins.",
 	//lol.
-	"item.enamel.glitch_pin": "pin.glitch"
+	"item.enamel.glitch_pin": "glitch.pin",
+	"lore.enamel.glitch_pin": "glitch.pin.lore"
 }
