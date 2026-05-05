@@ -1,5 +1,6 @@
 package io.github.Jackwastakenx2.enamel.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import eu.pb4.trinkets.api.TrinketsApi;
 import io.github.Jackwastakenx2.enamel.EnamelItems;
 import net.minecraft.core.BlockPos;
@@ -16,8 +17,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,18 +27,14 @@ import java.util.List;
 @Mixin(Block.class)
 public class BlockMixin {
 
-	@Inject(
+	@ModifyReturnValue(
 		method = "getDrops(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/entity/Entity;Lnet/minecraft/world/item/ItemInstance;)Ljava/util/List;",
-		at = @At("RETURN"),
-		cancellable = true
-	)
-	private static void smeltDroppedStacks(BlockState state, ServerLevel level, BlockPos pos, @Nullable BlockEntity blockEntity, @Nullable Entity breaker, ItemInstance tool, CallbackInfoReturnable<List<ItemStack>> cir) {
+		at = @At(value = "TAIL"))
+	private static List<ItemStack> smeltDroppedStacks(List<ItemStack> originalDrops, BlockState state, ServerLevel level, BlockPos pos, BlockEntity blockEntity, @Nullable Entity breaker, ItemInstance tool) {
 		List<ItemStack> drops = new ArrayList<>();
-		List<ItemStack> originalDrops = cir.getReturnValue();
 
-		if (breaker == null || !TrinketsApi.getAttachment((LivingEntity) breaker).isEquipped(EnamelItems.FURNACE_PIN)) {
-			cir.setReturnValue(originalDrops);
-			return;
+		if ((!(breaker instanceof LivingEntity)) || !TrinketsApi.getAttachment((LivingEntity) breaker).isEquipped(EnamelItems.FURNACE_PIN)) {
+			return originalDrops;
 		}
 
 		for (ItemStack drop : originalDrops) {
@@ -55,6 +50,6 @@ public class BlockMixin {
 			}
 		}
 
-		cir.setReturnValue(drops);
+		return drops;
 	}
 }
